@@ -1,0 +1,130 @@
+apc_backend/
+├── .github/workflows/ci.yml          # NEW
+├── .env.example                       # UPDATED
+├── .gitignore                         # NEW
+├── Dockerfile                         # UNCHANGED
+├── manage.py                          # UNCHANGED
+├── pytest.ini                         # NEW
+├── requirements.txt                   # UPDATED
+├── apc_project/
+│   ├── __init__.py                    # UNCHANGED
+│   ├── asgi.py                        # UPDATED
+│   ├── celery.py                      # UNCHANGED
+│   ├── settings.py                    # UPDATED
+│   ├── urls.py                        # UPDATED
+│   └── wsgi.py                        # UNCHANGED
+├── apps/
+│   ├── authentication/                # ORIGINAL – UNCHANGED
+│   ├── users/                         # MODIFIED (new fields)
+│   ├── nin_verification/              # ORIGINAL – UNCHANGED
+│   ├── posts/                         # ORIGINAL – UNCHANGED
+│   ├── messaging/                     # ORIGINAL – UNCHANGED
+│   ├── groups/                        # ORIGINAL – UNCHANGED
+│   ├── meetings/                      # ORIGINAL – UNCHANGED
+│   ├── notifications/                 # ORIGINAL – UNCHANGED
+│   ├── media/                         # ORIGINAL – UNCHANGED
+│   ├── analytics/                     # ORIGINAL – UNCHANGED
+│   ├── security/                      # ORIGINAL – UNCHANGED
+│   ├── stories/                       # ORIGINAL – UNCHANGED
+│   ├── live_streaming/                # ORIGINAL – UNCHANGED
+│   ├── hashtags/                      # ORIGINAL – UNCHANGED
+│   ├── reels/                         # ORIGINAL – UNCHANGED
+│   ├── events/                        # ORIGINAL – UNCHANGED
+│   ├── marketplace/                   # ORIGINAL – UNCHANGED
+│   ├── voice_notes/                   # ORIGINAL – UNCHANGED
+│   ├── broadcast/                     # ORIGINAL – UNCHANGED
+│   ├── close_friends/                 # ORIGINAL – UNCHANGED
+│   ├── data_export/                   # ORIGINAL – UNCHANGED
+│   ├── search/                        # ORIGINAL – UNCHANGED
+│   ├── location/                      # ORIGINAL – UNCHANGED
+│   ├── payments/                      # ORIGINAL – UNCHANGED
+│   ├── moderation/                    # ORIGINAL – UNCHANGED
+│   ├── i18n/                          # ORIGINAL – UNCHANGED
+│   ├── creator_analytics/             # ORIGINAL – UNCHANGED
+│   ├── scheduled_posts/               # ORIGINAL – UNCHANGED
+│   ├── multi_tenant/                  # COMPLETED
+│   ├── rbac/                          # COMPLETED
+│   ├── encryption/                    # COMPLETED
+│   ├── biometrics/                    # COMPLETED
+│   ├── recommendations/               # COMPLETED
+│   ├── ai/                            # COMPLETED
+│   └── sync/                          # COMPLETED
+├── core/
+│   ├── __init__.py                    # UNCHANGED
+│   ├── middleware/
+│   │   ├── __init__.py                # UNCHANGED
+│   │   ├── security.py                # UNCHANGED
+│   │   ├── audit.py                   # UNCHANGED
+│   │   ├── rate_limit.py              # UNCHANGED
+│   │   ├── device.py                  # UNCHANGED
+│   │   ├── i18n.py                    # UNCHANGED
+│   │   └── multi_tenant.py            # ENHANCED
+│   ├── permissions/
+│   │   ├── __init__.py                # UNCHANGED
+│   │   └── custom_permissions.py      # ENHANCED
+│   └── utils/
+│       ├── __init__.py                # UNCHANGED
+│       ├── encryption.py              # UNCHANGED
+│       ├── otp.py                     # UNCHANGED
+│       ├── email.py                   # UNCHANGED
+│       ├── sms.py                     # UNCHANGED
+│       ├── audit.py                   # UNCHANGED
+│       ├── pagination.py              # UNCHANGED
+│       ├── throttle.py                # UNCHANGED
+│       ├── exceptions.py              # ENHANCED
+│       ├── logging.py                 # UNCHANGED
+│       ├── db_router.py               # UNCHANGED
+│       ├── location.py                # UNCHANGED
+│       ├── payments.py                # UNCHANGED
+│       ├── moderation.py              # UNCHANGED
+│       ├── i18n.py                    # UNCHANGED
+│       └── e2ee.py                    # COMPLETED
+├── infrastructure/
+│   ├── __init__.py                    # UNCHANGED
+│   ├── celery_tasks/
+│   │   ├── __init__.py                # UNCHANGED
+│   │   ├── notifications.py           # UNCHANGED
+│   │   ├── media.py                   # UNCHANGED
+│   │   ├── meetings.py                # UNCHANGED
+│   │   ├── analytics.py               # UNCHANGED
+│   │   ├── security.py                # UNCHANGED
+│   │   ├── audit.py                   # UNCHANGED
+│   │   ├── stories.py                 # UNCHANGED
+│   │   ├── live_streaming.py          # UNCHANGED
+│   │   ├── moderation.py              # UNCHANGED
+│   │   ├── data_export.py             # UNCHANGED
+│   │   ├── scheduled_posts.py         # UNCHANGED
+│   │   ├── recommendations.py         # COMPLETED
+│   │   ├── ai_moderation.py           # COMPLETED
+│   │   └── sync.py                    # COMPLETED
+│   └── websockets/
+│       ├── __init__.py                # UNCHANGED
+│       ├── notification_consumer.py   # UNCHANGED
+│       ├── presence_consumer.py       # UNCHANGED
+│       ├── live_streaming_consumer.py # UNCHANGED
+│       ├── location_consumer.py       # UNCHANGED
+│       └── sync_consumer.py           # COMPLETED
+├── config/
+│   ├── docker/
+│   │   ├── docker-compose.yml         # UPDATED
+│   │   └── docker-compose.override.yml # NEW
+│   ├── nginx/nginx.conf               # UNCHANGED
+│   ├── kubernetes/                    # UNCHANGED (manifests)
+│   ├── prometheus/prometheus.yml      # UNCHANGED
+│   └── grafana/                       # NEW (dashboard)
+├── scripts/
+│   ├── deployment/deploy.sh           # UNCHANGED
+│   ├── automation/                    # UNCHANGED
+│   └── monitoring/health_check.py     # UNCHANGED
+├── tests/                             # COMPLETED
+│   ├── __init__.py
+│   ├── conftest.py
+│   ├── test_users/
+│   ├── test_multi_tenant/
+│   ├── test_rbac/
+│   ├── test_encryption/
+│   ├── test_biometrics/
+│   ├── test_recommendations/
+│   ├── test_ai/
+│   └── test_sync/
+└── docs/                              # UNCHANGED (API documentation)
